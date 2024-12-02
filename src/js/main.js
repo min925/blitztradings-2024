@@ -1,4 +1,11 @@
 $(document).ready(function() {
+    const circle = document.getElementById('circle');
+
+    document.addEventListener('mousemove', (event) => {
+        circle.style.left = `${event.clientX - circle.offsetWidth / 2}px`;
+        circle.style.top = `${event.clientY - circle.offsetHeight / 2}px`;
+    });
+
     gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
     const sections = document.querySelectorAll("section");
 
