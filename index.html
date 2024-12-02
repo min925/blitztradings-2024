@@ -1,0 +1,219 @@
+<html>
+    <head>
+        <title>BLITZ TRADINGS</title>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Favourite icon (.ico) -->
+        <link rel="icon" type="image/ico" href="favicon.ico">
+        <!-- import tailwind -->
+        <link href="src/css/output.css" rel="stylesheet">
+        <!-- import google fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500;700&display=swap" rel="stylesheet">
+        <!-- import lenis -->
+        <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.17/dist/lenis.css">
+        <script src="https://unpkg.com/lenis@1.1.17/dist/lenis.min.js"></script>
+        <!-- import jQuery -->
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        <!-- import GSAP + ScrollTrigger + ScrollTo -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+        <!-- import main.js -->
+        <script src="src/js/main.js"></script>
+    </head>
+    <body>
+        <!-- Video Background -->
+        <div class="fixed top-0 left-0 right-0 bottom-0 z-[-1] overflow-hidden">
+            <video autoplay muted loop id="bg-video" class="w-full h-full object-cover">
+                <source src="src/video/background.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <!-- Mouse Circle -->
+        <div class="circle"></div>
+
+        <!-- header -->
+        <img src="src/images/logo.svg" alt="BLITZ TRADINGS" id="logo" class="fixed top-[20px] left-[20px] w-[120px] h-[35px] md:top-[40px] md:left-[40px] md:w-[240px] md:h-[70px]">
+
+        <!-- Section 1 -->
+        <section class="section-1">
+            <div class="divider pt-4 md:pt-8">
+                <div class="white-line w-full h-full"></div>
+            </div>
+            <h1>Your gateway<br /><span class="emphasis">to the world</span></h1>
+            <div class="divider">
+                <div class="white-line w-full h-full"></div>
+            </div>
+            <div class="flex flex-col gap-2 mb-4 justify-center items-center">
+                <div class="emphasis text-[10px] md:text-[16px] font-light uppercase whitespace-nowrap">Scroll Down</div>
+                <img src="src/images/down.svg" alt="arrow down" class="w-[16px] md:w-[24px] animate-bounce">
+            </div>
+        </section>
+
+        <!-- Section 2 -->
+        <section class="section-2">
+            <div class="px-4 md:px-8 lg:px-16">
+                <p>Established in <span class="emphasis">2019</span>, we are dedicated to fostering international trade with a strong focus on the <span class="emphasis">South American</span> and <span class="emphasis">Asia Pacific</span> market.</p>
+                <p>Join us as we explore new horizons and unlock the potential of this vibrant market.</p>
+                <h2 class="mt-12">[Contact Us]</h2>
+                <a href="mailto:hi@blitztradings.com" class="email uppercase whitespace-nowrap">hi@blitztradings.com</a>
+            </div>
+        </section>
+    </body>
+</html>
+
+<style>
+    :root {
+        /* --color-primary: #2F80A9;
+        --color-secondary: #253645; */
+        --color-primary: #006daa;
+        --color-secondary: #003559;
+        --color-tertiary: #eaf8bf;
+        --font-size: 16px;
+        --line-height: 150%;
+        --font-weight: 700;
+    }
+    html, body {
+        font-family: 'Open Sans', sans-serif;
+        font-size: var(--font-size);
+        line-height: var(--line-height);
+        font-weight: var(--font-weight);
+        box-sizing: border-box;
+        overflow-x: hidden;
+        color: var(--color-primary);
+    }
+    #logo {
+        transition: transform 150ms ease;
+        transform-origin: left top;
+    }
+    section {
+        position: relative;
+        display: flex;
+        width: 100%;
+        height: 100dvh;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        @media (min-width: 768px) {
+            gap: 2rem;
+        }
+    }
+    .font-light {
+        font-weight: 500;
+    }
+    .circle {
+        pointer-events: none;
+        position: fixed;
+        width: 40px;
+        height: 40px;
+        border-radius: 9999px;
+        border: 1px solid var(--color-primary);
+        transition: transform 150ms ease;
+        opacity: 0;
+        @media (min-width: 768px) {
+            opacity: .5;
+        }
+    }
+    h1 {
+        font-size: 40px;
+        line-height: 120%;
+        font-weight: 700;
+        color: #fff;
+        text-align: center;
+        text-transform: uppercase;
+        color: var(--color-primary);
+        @media (min-width: 768px) {
+            font-size: 80px;
+        }
+        @media (min-width: 1200px) {
+            font-size: 120px;
+        }
+    }
+    h2 {
+        margin-bottom: .75em;
+        font-size: 14px;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--color-secondary);
+        @media (min-width: 768px) {
+            font-size: 16px;
+        }
+        @media (min-width: 1200px) {
+            font-size: 20px;
+        }
+    }
+    a, p {
+        margin-bottom: 1rem;
+        font-size: 20px;
+        line-height: 140%;
+        color: var(--color-primary);
+        @media (min-width: 768px) {
+            font-size: 32px;
+        }
+        @media (min-width: 1200px) {
+            font-size: 40px;
+        }
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+    a {
+        position: relative;
+        &::after{
+            transition: all 150ms ease;
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right:100%;
+            height: .5em;
+            background-color: var(--color-tertiary);
+            z-index: -1;
+        }
+        &:hover::after {
+            right: 0;
+            transition: all 150ms ease;
+        }
+    }
+    .emphasis {
+        color: var(--color-secondary);
+    }
+    .section-1 .divider:nth-of-type(2) .white-line {
+        animation-delay: 3s;
+        background-color: var(--color-secondary);
+    }
+    .divider {
+        position: relative;
+        width: 1px;
+        height: 100%;
+        overflow: hidden;
+        @media (min-width: 768px) {
+            width: 2px;
+        }
+    }
+    .white-line {
+        background-color: var(--color-primary);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transform: translateY(-100%);
+        animation: dripWhiteLine 5s linear infinite;
+    }
+    @keyframes dripWhiteLine {
+        0% {
+            transform: translateY(-100%);
+        }
+        50% {
+            transform: translateY(0);
+        }
+        100% {
+            transform: translateY(100%);
+        }
+    }
+</style>
